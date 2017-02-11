@@ -41,6 +41,7 @@ function Overlay (image, time, value) {
 
 
     document.body.appendChild(this.element);
+    this.element.fadeIn(1000);
 
 
     var that = this;
