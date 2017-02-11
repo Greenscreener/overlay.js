@@ -1,5 +1,5 @@
 function Overlay (image, time, value) {
-    function fadeIn(el) {
+    var this.fadein = function (el) {
         el.style.opacity = 0;
 
         var last = +new Date();
@@ -14,7 +14,7 @@ function Overlay (image, time, value) {
 
         tick();
     }
-    function this.FadeOut(el) {
+    var this.fadeOut = function (el) {
         el.style.opacity = 1;
 
         var last = -new Date();
@@ -74,18 +74,18 @@ function Overlay (image, time, value) {
 
 
     document.body.appendChild(this.element);
-    fadeIn(this.element);
+    this.fadeIn(this.element);
 
 
     var that = this;
     var remove = function () {
         that.element.parentNode.removeChild(that.element);
-        this.FadeOut(that.element);
+        this.fadeOut(that.element);
         //console.log(that.element);
     };
     this.remove = function () {
-        setTimeout(function () {hat.element.parentNode.removeChild(that.element);},1000);
-        this.FadeOut(that.element);
+        setTimeout(function () {hat.element.parentNode.removeChild(that.element);},1000};
+        this.fadeOut(that.element);
         //console.log(that.element);
     };
 
