@@ -84,7 +84,7 @@ function Overlay (image, time, value) {
         //console.log(that.element);
     };
     this.remove = function () {
-        setTimeout(function () {hat.element.parentNode.removeChild(that.element);},1000});
+        setTimeout(function () {that.element.parentNode.removeChild(that.element);},1000});
         this.fadeOut(that.element);
         //console.log(that.element);
     };
