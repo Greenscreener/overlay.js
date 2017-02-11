@@ -13,6 +13,7 @@ function Overlay (image, time, value) {
 
     var headHTML = document.getElementsByTagName('head')[0].innerHTML;
     headHTML    += '<link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">';
+    if (!window.jQuery) {headHTML    += '<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>';}
     document.getElementsByTagName('head')[0].innerHTML = headHTML;
 
 
