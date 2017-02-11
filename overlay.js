@@ -1,5 +1,5 @@
 function Overlay (image, time, value) {
-    var this.fadein = function (el) {
+    this.fadein = function (el) {
         el.style.opacity = 0;
 
         var last = +new Date();
@@ -14,7 +14,7 @@ function Overlay (image, time, value) {
 
         tick();
     }
-    var this.fadeOut = function (el) {
+    this.fadeOut = function (el) {
         el.style.opacity = 1;
 
         var last = -new Date();
