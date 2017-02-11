@@ -17,12 +17,12 @@ function Overlay (image, time, value) {
     this.fadeOut = function (el) {
         el.style.opacity = 1;
 
-        var last = -new Date();
+        var last = +new Date();
         var tick = function() {
-            el.style.opacity = -el.style.opacity - (new Date() - last) / 400;
-            last = -new Date();
+            el.style.opacity = +el.style.opacity - (new Date() - last) / 400;
+            last = +new Date();
 
-            if (-el.style.opacity > 0) {
+            if (+el.style.opacity > 0) {
                 (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16);
             }
         };
@@ -79,13 +79,13 @@ function Overlay (image, time, value) {
 
     var that = this;
     var remove = function () {
-        that.element.parentNode.removeChild(that.element);
-        this.fadeOut(that.element);
+        setTimeout(function () {that.element.parentNode.removeChild(that.element);},1000);
+        that.fadeOut(that.element);
         //console.log(that.element);
     };
     this.remove = function () {
-        setTimeout(function () {that.element.parentNode.removeChild(that.element);},1000});
-        this.fadeOut(that.element);
+        setTimeout(function () {that.element.parentNode.removeChild(that.element);},1000);
+        that.fadeOut(that.element);
         //console.log(that.element);
     };
 
