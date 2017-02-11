@@ -14,7 +14,7 @@ function Overlay (image, time, value) {
 
         tick();
     }
-    function fadeOut(el) {
+    function this.FadeOut(el) {
         el.style.opacity = 1;
 
         var last = -new Date();
@@ -80,12 +80,12 @@ function Overlay (image, time, value) {
     var that = this;
     var remove = function () {
         that.element.parentNode.removeChild(that.element);
-        fadeOut(that.element);
+        this.FadeOut(that.element);
         //console.log(that.element);
     };
     this.remove = function () {
         setTimeout(function () {hat.element.parentNode.removeChild(that.element);},1000);
-        fadeOut(that.element);
+        this.FadeOut(that.element);
         //console.log(that.element);
     };
 
