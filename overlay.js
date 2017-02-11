@@ -1,4 +1,22 @@
 function Overlay (image, time, value) {
+    function fadeIn(el) {
+        el.style.opacity = 0;
+
+        var last = +new Date();
+        var tick = function() {
+            el.style.opacity = +el.style.opacity + (new Date() - last) / 400;
+            last = +new Date();
+
+            if (+el.style.opacity < 1) {
+                (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16);
+            }
+        };
+
+        tick();
+    }
+
+
+
 
     this.element = document.createElement("DIV");
     //this.valueNode = document.createTextNode(value);
@@ -13,7 +31,7 @@ function Overlay (image, time, value) {
 
     var headHTML = document.getElementsByTagName('head')[0].innerHTML;
     headHTML    += '<link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">';
-    if (!window.jQuery) {headHTML    += '<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>';}
+    //if (!window.jQuery) {headHTML    += '<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>';}
     document.getElementsByTagName('head')[0].innerHTML = headHTML;
 
 
@@ -41,7 +59,7 @@ function Overlay (image, time, value) {
 
 
     document.body.appendChild(this.element);
-    this.element.fadeIn(1000);
+    fadeIn(this.element);
 
 
     var that = this;
