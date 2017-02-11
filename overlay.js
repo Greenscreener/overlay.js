@@ -1,5 +1,5 @@
 function Overlay (image, time, value) {
-    this.fadein = function (el) {
+    this.fadeIn = function (el) {
         el.style.opacity = 0;
 
         var last = +new Date();
